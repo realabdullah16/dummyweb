@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+
+<a href="/signup"><h1>Sign up</h1></a><br><a href="/login"><h1>log in</h1></a><br>
+<table>
+
+<tr>
+<td>No</td>
+<td>Name</td>
+<td>E-mail</td>
+<td>Age</td>
+<td>City</td>
+<td>DOJ</td>
+</tr>
+
+
+{{#each data}}
+{{#with this}}
+<tr>
+<td>{{s_no}}</td>
+<td>{{Name}}</td>
+<td>{{mail}}</td>
+<td>{{age}}</td>
+<td>{{city}}</td>
+<td>{{DOJ}}</td>
+</tr>
+{{/with}}
+{{/each}}
+
+</table>
+</body>
+</html>

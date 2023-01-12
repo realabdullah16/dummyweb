@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    {{!-- <script src="/jquery.js"></script> --}}
+    <title>Login</title>
+</head>
+<body>
+<h1 id="status"></h1>
+<form method="post" action="/login">
+
+<label for="mail">mail:</label>
+<input type="mail" name="mail" id="mail" value="{{#unless status}}{{mail}}{{else}}{{/unless}}" required><br>
+
+<label for="password">passowrd:</label>
+<input type="password" name="password" id="password" value="{{#unless status}}{{password}}{{else}}{{/unless}}" required>
+
+<input type="submit" value="done"> <br>
+{{#unless status}}<span>{{message}}</span>{{/unless}} 
+{{#if reg}}<span><a href="/signup">Register?</a></span>{{/if}}
+</form>
+<br><br>
+<a href="/redirecting">home</a>
+</body>
+<script>
+
+const po = new Promise(function(resolve,reject){
+var x = true;
+if(x==true){
+resolve('successful');
+}
+else{
+reject('failed');
+}
+}).then(
+(v)=>{
+console.log(v);
+return v + ' as always';
+},
+).then(
+(v)=>{
+console.log(v);
+}
+).catch(
+(e)=>{
+console.log(e);
+},
+).finally(
+(v)=>{
+console.log('heheheh');
+}
+);
+</script>
+</html>
